@@ -1,0 +1,58 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/style.css">
+<title>Woldan Dokumentation</title>
+<body>
+  <header>
+    <h1>Woldan Dokumentation</h1>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li><a href="../">Startseite</a></li>
+        
+          <li class="active"><a href="../tools/">Tools</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    
+  <h2>Tools</h2>
+  <p>Der Import einer neuen Karte erfolgt über folgende Schritte</p>
+<ol>
+<li>Generierung einer GeoTiff Datei aus den original Tiff Dateien und der mit QGIS erstellten Georeferenzierung.</li>
+<li>Generierung der Metadaten im ISO 19115 Format anhand der ASEQ Bibliotheksdaten une einer Kategorisierung anhand Datei im Excel CSV Format.</li>
+<li>Import des GeoTiff und der Metadaten nach Geonode.</li>
+</ol>
+<p>Für die Automatisierung des Datenimports stehen eine Reihe von Tasks zur Verfügung die auf dem <a href="http://www.pyinvoke.org/">Python Tool Invoke</a> basieren.</p>
+<p>Die Tools befinden sich im Verzeichnis /code/woldan-manager und erfordern nach dem einloggen in dieses mittles <code>cd /code/woldan-manager</code></p>
+<p><strong><em>Aktualisierung der Management Tools</em></strong></p>
+<p>Die Aktualisierung der Tools erfolgt direkt aus dem woldan-manager github repository mittels <code>git pull</code>.</p>
+<p><strong><em>Anzeige der Tasks</em></strong></p>
+<p>Die Anzeige aller vorhandenen Tasks erfolgt mit dem Befehl <code>inv -l</code></p>
+<pre><code>Available tasks:
+
+  create-maps
+  create-metadata
+  import-maps
+  rebuild-index
+  test-geocoder
+</code></pre>
+<p><strong><em>Starten eines Tasks</em></strong></p>
+<p>Der Start eines Tasks erfolgt mittels <code>inv TASKNAME</code> wobei es ratsam ist noch die option <code>-we</code> für Echo und warning only zu verwenden z.B. <code>inv -we create-maps</code>.</p>
+<p><strong><em>Task create-maps</em></strong></p>
+<p>Der Task create-maps sucht nach neuen Tiffs die noch nicht georeferenziert sind und erstellt aus diesen ein georeferenziertes GeoTiff.</p>
+<p><strong><em>Task create-metadata</em></strong></p>
+<p>Der Task create-metadata sucht nach GeoTiffs für die noch keine Metadatei im ISO 19115 format erstellt wurde.</p>
+<p><strong><em>Task import-maps</em></strong></p>
+<p>Importiert die vorhandenen GeoTiffs und Metadaten nach Geonode bzw. Geoserver.</p>
+<p><strong><em>Task rebuild-index</em></strong></p>
+<p>Mitunter kann es vorkommen das z.B. gelöschte Karten noch im Volltextindex aufscheinen. Mithilfe des Task rebuild-index kann dieser anhand der aktuellen Karten neu aufgebaut werden.</p>
+<p><strong><em>Task test-geocoder</em></strong></p>
+<p>Für die Erkennung der Regian einer Karte wird eine Verbindung zum Geocoder von Google benötigt. Mithilfe des Task test-geocoder kann getestet werden, ob die Verbindung zum Geocoder einwandfrei funktioniert.</p>
+
+
+  </div>
+  <footer>
+    &copy; Copyright 2018 by Andreas Trawöger.
+  </footer>
+</body>
