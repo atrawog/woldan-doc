@@ -33,3 +33,23 @@ Available tasks:
 ***Starten eines Tasks***
 
 Der Start eines Tasks erfolgt mittels `inv TASKNAME` wobei es ratsam ist noch die option `-we` für Echo und warning only zu verwenden z.B. `inv -we create-maps`.
+
+***Task create-maps***
+
+Der Task create-maps sucht nach neuen Tiffs die noch nicht georeferenziert sind und erstellt aus diesen ein georeferenziertes GeoTiff.
+
+***Task create-metadata***
+
+Der Task create-metadata sucht nach GeoTiffs für die noch keine Metadatei im ISO 19115 format erstellt wurde.
+
+***Task import-maps***
+
+Importiert die vorhandenen GeoTiffs und Metadaten nach Geonode bzw. Geoserver.
+
+***Task rebuild-index***
+
+Mitunter kann es vorkommen das z.B. gelöschte Karten noch im Volltextindex aufscheinen. Mithilfe des Task rebuild-index kann dieser anhand der aktuellen Karten neu aufgebaut werden.
+
+***Task test-geocoder***
+
+Für die Erkennung der Regian einer Karte wird eine Verbindung zum Geocoder von Google benötigt. Mithilfe des Task test-geocoder kann getestet werden, ob die Verbindung zum Geocoder einwandfrei funktioniert.
