@@ -1,0 +1,35 @@
+title: Tools
+---
+body:
+
+Der Import einer neuen Karte erfolgt über folgende Schritte
+
+1. Generierung einer GeoTiff Datei aus den original Tiff Dateien und der mit QGIS erstellten Georeferenzierung.
+2. Generierung der Metadaten im ISO 19115 Format anhand der ASEQ Bibliotheksdaten une einer Kategorisierung anhand Datei im Excel CSV Format.
+3. Import des GeoTiff und der Metadaten nach Geonode.
+
+Für die Automatisierung des Datenimports stehen eine Reihe von Tasks zur Verfügung die auf dem [Python Tool Invoke](http://www.pyinvoke.org/) basieren.
+
+Die Tools befinden sich im Verzeichnis /code/woldan-manager und erfordern nach dem einloggen in dieses mittles `cd /code/woldan-manager`
+
+***Aktualisierung der Management Tools***
+
+Die Aktualisierung der Tools erfolgt direkt aus dem woldan-manager github repository mittels `git pull`.
+
+***Anzeige der Tasks***
+
+Die Anzeige aller vorhandenen Tasks erfolgt mit dem Befehl `inv -l`
+
+```
+Available tasks:
+
+  create-maps
+  create-metadata
+  import-maps
+  rebuild-index
+  test-geocoder
+```
+
+***Starten eines Tasks***
+
+Der Start eines Tasks erfolgt mittels `inv TASKNAME` wobei es ratsam ist noch die option `-we` für Echo und warning only zu verwenden z.B. `inv -we create-maps`.
