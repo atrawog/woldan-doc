@@ -31,11 +31,14 @@
 <p>Die Anzeige aller vorhandenen Tasks erfolgt mit dem Befehl <code>inv -l</code></p>
 <pre><code>Available tasks:
 
-  create-maps
-  create-metadata
-  import-maps
-  rebuild-index
-  test-geocoder
+cleanup_tmp
+create_maps
+create_metadata
+create_sitemap
+import_maps
+rebuild_index
+test_geocoder
+update_maps
 </code></pre>
 <p><strong><em>Starten eines Tasks</em></strong></p>
 <p>Der Start eines Tasks erfolgt mittels <code>inv TASKNAME</code> wobei es ratsam ist noch die option <code>-we</code> für Echo und warning only zu verwenden z.B. <code>inv -we create-maps</code>.</p>
@@ -44,9 +47,13 @@
 <p><strong><em>Task create-metadata</em></strong></p>
 <p>Der Task create-metadata sucht nach GeoTiffs für die noch keine Metadatei im ISO 19115 format erstellt wurde.</p>
 <p><strong><em>Task import-maps</em></strong></p>
-<p>Importiert die vorhandenen GeoTiffs und Metadaten nach Geonode bzw. Geoserver.</p>
+<p>Importiert alle vorhandenen GeoTiffs und Metadaten nach Geonode bzw. Geoserver.</p>
+<p><strong><em>Task update-maps</em></strong></p>
+<p>Importiert neue und noch nicht importiere GeoTiffs und deren Metadaten nach Geonode bzw. Geoserver.</p>
 <p><strong><em>Task rebuild-index</em></strong></p>
 <p>Mitunter kann es vorkommen das z.B. gelöschte Karten noch im Volltextindex aufscheinen. Mithilfe des Task rebuild-index kann dieser anhand der aktuellen Karten neu aufgebaut werden.</p>
+<p><strong><em>Task cleanup_tmp</em></strong></p>
+<p>Löscht alle temporären Daten, die nach einem fehlgeschlagenen Import noch vorhanden sind.</p>
 <p><strong><em>Task test-geocoder</em></strong></p>
 <p>Für die Erkennung der Regian einer Karte wird eine Verbindung zum Geocoder von Google benötigt. Mithilfe des Task test-geocoder kann getestet werden, ob die Verbindung zum Geocoder einwandfrei funktioniert.</p>
 
