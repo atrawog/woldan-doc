@@ -53,6 +53,10 @@ Importiert alle vorhandenen GeoTiffs und Metadaten nach Geonode bzw. Geoserver.
 
 Importiert neue und noch nicht importiere GeoTiffs und deren Metadaten nach Geonode bzw. Geoserver.
 
+***Task update-layer***
+
+Erlaubt die Neugenerierung und Aktualisierung eines bereits importierten GeoTiffs nach Geonode bzw. Geoserver.
+
 ***Task rebuild-index***
 
 Mitunter kann es vorkommen das z.B. gelöschte Karten noch im Volltextindex aufscheinen. Mithilfe des Task rebuild-index kann dieser anhand der aktuellen Karten neu aufgebaut werden.
